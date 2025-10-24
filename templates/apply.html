@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Application Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>📝 Application Form</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label for="full_name">Full Name:</label>
+        <input type="text" name="full_name" id="full_name" required>
+
+        <label for="grade">Grade:</label>
+        <input type="text" name="grade" id="grade" required>
+
+        <label for="message">Motivation:</label>
+        <textarea name="message" id="message" rows="4" required></textarea>
+
+        <label for="document">Upload Supporting Document:</label>
+        <input type="file" name="document" id="document" accept=".pdf,.docx,.jpg,.jpeg,.png">
+        <p class="note">Accepted formats: PDF, DOCX, JPG, PNG</p>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</body>
+</html>

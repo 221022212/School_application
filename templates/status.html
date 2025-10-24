@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>📊 Your Application Status</h2>
+
+    {% if application %}
+        <p><strong>Full Name:</strong> {{ application.full_name }}</p>
+        <p><strong>Email:</strong> {{ application.email }}</p>
+        <p><strong>Grade:</strong> {{ application.grade }}</p>
+        <p><strong>Message:</strong> {{ application.message }}</p>
+        <p><strong>Status:</strong> <span style="color:blue;">{{ application.status or 'Under Review' }}</span></p>
+    {% else %}
+        <p>No application found for your account.</p>
+    {% endif %}
+    {% if application.document %}
+        <p><strong>Uploaded Document:</strong>
+            <a href="{{ url_for('static', filename='uploads/' ~ application.document) }}" target="_blank">
+                View Document
+            </a>
+        </p>
+    {% endif %}
+
+    <p><a href="{{ url_for('logout') }}">🔓 Logout</a></p>
+</body>
+</html>

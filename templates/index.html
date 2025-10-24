@@ -1,42 +1,53 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>School Application Portal</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <title>Bloemfontein Secondary Schools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .button-group {
+            margin-top: 30px;
+        }
+        .button-group a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+        .button-group a:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>📚 School Application Portal</h1>
-    <p>Apply for admission to our school</p>
-  </header>
+    <h1>Welcome to Bloemfontein Secondary Schools Portal</h1>
+    <p>Empowering learners through excellence in education and community leadership.</p>
 
-  <main>
-    <form id="application-form" method="POST" action="/submit_application/">
-      <label for="fullName">Full Name:</label>
-      <input type="text" id="fullName" name="fullName" required />
+    <div class="button-group">
+        <a href="{{ url_for('register') }}">📝 Apply Now</a>
+        <a href="{{ url_for('about') }}">🏫 About Us</a>
+        <a href="{{ url_for('achievements') }}">🏆 Achievements</a>
+        <a href="{{ url_for('login') }}">🔐 Admin Login</a>
+         <a href="{{ url_for('login_student') }}">📊 Check Application Status</a>
+    </div>
+</body>
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required />
 
-      <label for="grade">Grade Applying For:</label>
-      <select id="grade" name="grade" required>
-        <option value="">Select Grade</option>
-        <option value="Grade 8">Grade 8</option>
-        <option value="Grade 9">Grade 9</option>
-        <option value="Grade 10">Grade 10</option>
-        <option value="Grade 11">Grade 11</option>
-        <option value="Grade 12">Grade 12</option>
-      </select>
-
-      <label for="message">Motivation Letter:</label>
-      <textarea id="message" name="message" rows="5" placeholder="Tell us why you're applying..." required></textarea>
-
-      <button type="submit">Submit Application</button>
-    </form>
-  </main>
-
+    </div>
+</body>
+</html>
   <footer>
     <p>&copy; 2025 School Application System. All rights reserved.</p>
   </footer>
