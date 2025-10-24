@@ -6,11 +6,13 @@ A full-stack web application built with Flask, MySQL, HTML, and CSS that allows 
 
 ## 🚀 Features
 
-- Responsive front-end form for student applications
-- Backend integration using Flask
-- Data storage in MySQL database
-- Confirmation page after successful submission
-- Clean folder structure and modular code
+✅ Project name and purpose
+✅ Live link: https://DavidMolefi.pythonanywhere.com
+✅ Features: student registration, admin dashboard, status check
+✅ Tech stack: Flask, MySQL, PythonAnywhere
+✅ Setup instructions (clone, virtualenv, run)
+✅ Screenshots or pitch deck link
+
 
 ---
 
